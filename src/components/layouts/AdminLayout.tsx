@@ -7,7 +7,7 @@ const AdminLayout = () => {
   return (
     <Grid
       as="main"
-      gridTemplateColumns="320px 1fr"
+      gridTemplateColumns={{ base: "0px 1fr", xl: "320px 1fr" }}
       gridTemplateRows="60px 1fr"
       h="100vh"
       templateAreas={`"sidebar header" "sidebar main"`}
