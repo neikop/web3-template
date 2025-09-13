@@ -1,4 +1,5 @@
 import { Guide } from "views/Component"
+import { Home } from "views/Home"
 import { Swap } from "views/Swap"
 
 const privateRoute = {
@@ -8,9 +9,9 @@ const privateRoute = {
     path: "/component",
   },
   home: {
-    component: Swap,
-    name: "Swap",
-    path: "/swap",
+    component: Home,
+    name: "Home",
+    path: "/",
   },
   swap: {
     component: Swap,

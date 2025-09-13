@@ -1,13 +1,20 @@
 import { Box, Grid } from "@chakra-ui/react"
-import { AppHeader } from "components/app"
+import { AppHeader, AppSidebarAdmin } from "components/app"
 import { Navigate, Route, Routes } from "react-router"
 import { privateRoute } from "routes"
 
-const PrivateLayout = () => {
+const AdminLayout = () => {
   return (
-    <Grid as="main" gridTemplateRows="64px 1fr" h="100vh" templateAreas={`"header" "main"`}>
+    <Grid
+      as="main"
+      gridTemplateColumns="320px 1fr"
+      gridTemplateRows="60px 1fr"
+      h="100vh"
+      templateAreas={`"sidebar header" "sidebar main"`}
+    >
+      <AppSidebarAdmin />
       <AppHeader />
-      <Box gridArea="main" px={{ md: 6 }} py={6}>
+      <Box gridArea="main" px={4} py={2}>
         <Routes>
           {Object.values(privateRoute).map(({ component: Element, path }) => (
             <Route element={<Element />} key={path} path={path} />
@@ -19,4 +26,4 @@ const PrivateLayout = () => {
   )
 }
 
-export default PrivateLayout
+export default AdminLayout
